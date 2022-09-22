@@ -40,6 +40,17 @@ def process_image():
     custom_config = r'-l tha+eng --dpi 400 --oem 1'
     # custom_config = r'-l tha+eng --dpi 400 --oem 1 -clanguage_model_ngram_space_delimited_language=1'
 
+
+    # data = pytesseract.image_to_data(img_thresholding,config=custom_config, output_type=Output.DICT)
+    # totalBox = len(data['text'])
+    # for i in range(totalBox):
+    #     (x, y, w, h) = (data['left'][i], data['top'][i], data['width'][i], data['height'][i])
+    #     img = cv2.rectangle(img_thresholding, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+    # cv2.imshow('img', img)
+    # cv2.waitKey(0)
+
+
     text = pytesseract.image_to_string(img_thresholding, config=custom_config)
     return text
 
